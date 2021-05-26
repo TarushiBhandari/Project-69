@@ -31,6 +31,7 @@ export default class ScanScreen extends React.Component{
 
     render(){
         const hasCameraPermissions= this.state.hasCameraPermissions;
+        const buttonState= this.state.buttonState;
 
         if(buttonState==='clicked' && hasCameraPermissions){
             return (
@@ -46,8 +47,9 @@ export default class ScanScreen extends React.Component{
                     alignItems: 'center',
                 }}>
                     <Text style={{
-                        fontSize: 30,
-                        alignText: 'center'
+                        fontSize: 20,
+                        alignText: 'center',
+                        marginTop: 200
                     }}>
                         {hasCameraPermissions ?this.state.scannedData:'Request Camera Permission'}
                     </Text>
@@ -55,13 +57,14 @@ export default class ScanScreen extends React.Component{
                     <TouchableOpacity style={{
                         backgroundColor: 'yellow',
                         padding: 10,
-                        margin: 10,
-                        borderRadius: 100
+                        margin: 100,
+                        borderRadius: 10
                     }} onPress={this.getCameraPermission}>
                     
                         <Text style={{
                             fontSize: 15,
-                            fontWeight: 'bold'
+                            fontWeight: 'bold',
+                            margin: 20
                         }}>
                             Scan QR Code</Text>
                     </TouchableOpacity>
