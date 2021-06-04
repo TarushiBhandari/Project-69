@@ -22,6 +22,7 @@ export default class ScanScreen extends React.Component{
     }
 
     handleBarCodeScan=async ({type,data})=>{
+        const buttonState= this.state;
         this.setState({
             scanned: true,
             scannedData: data,
@@ -32,6 +33,7 @@ export default class ScanScreen extends React.Component{
     render(){
         const hasCameraPermissions= this.state.hasCameraPermissions;
         const buttonState= this.state.buttonState;
+        const scanned= this.state.scanned;
 
         if(buttonState==='clicked' && hasCameraPermissions){
             return (
